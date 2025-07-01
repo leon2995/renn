@@ -1,21 +1,24 @@
-const fechaInicio = new Date("2023-12-23"); // Fecha de inicio de la relación
+const startDate = new Date('2024-05-11T00:00:00');
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
 
-const actualizarContador = () => {
-  const ahora = new Date();
-  const diferencia = ahora - fechaInicio;
+function updateTimer() {
+  const now = new Date();
+  const diff = now - startDate;
 
-  // Convertir la diferencia de milisegundos a días, horas, minutos y segundos
-  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
 
-  // Actualizar el contenido del contador
-  document.getElementById("dias").textContent = dias;
-  document.getElementById("horas").textContent = horas;
-  document.getElementById("minutos").textContent = minutos;
-  document.getElementById("segundos").textContent = segundos;
-};
+  daysEl.textContent = String(days).padStart(2, '0');
+  hoursEl.textContent = String(hours).padStart(2, '0');
+  minutesEl.textContent = String(minutes).padStart(2, '0');
+  secondsEl.textContent = String(seconds).padStart(2, '0');
+}
 
-// Actualizar el contador cada segundo
-setInterval(actualizarContador, 1000);
+setInterval(updateTimer, 1000);
+updateTimer();
+
