@@ -1,10 +1,7 @@
 const startDate = new Date('2025-05-11T00:00:00');
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
+const counter = document.getElementById('counter');
 
-function updateTimer() {
+function updateCounter() {
   const now = new Date();
   const diff = now - startDate;
 
@@ -13,12 +10,8 @@ function updateTimer() {
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
 
-  daysEl.textContent = String(days).padStart(2, '0');
-  hoursEl.textContent = String(hours).padStart(2, '0');
-  minutesEl.textContent = String(minutes).padStart(2, '0');
-  secondsEl.textContent = String(seconds).padStart(2, '0');
+  counter.textContent = `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
 }
 
-setInterval(updateTimer, 1000);
-updateTimer();
-
+updateCounter();
+setInterval(updateCounter, 1000);
