@@ -1,93 +1,29 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: radial-gradient(#0d1a2b, #000814);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f0f0f0;
+  background: #1e1e1e;
+  color: #ccc;
+  font-family: 'Georgia', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  padding-top: 60px;
-}
-
-.timer {
-  display: flex;
-  gap: 20px;
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
   justify-content: center;
-}
-
-.timer div {
-  background-color: #1b263b;
-  padding: 20px 30px;
-  border-radius: 8px;
+  height: 100vh;
+  margin: 0;
   text-align: center;
-  min-width: 100px;
-  margin-bottom: 10px;
-}
-
-.timer span {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #68c4ff;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 2em;
   margin-bottom: 10px;
-  color: #eee;
-  text-align: center;
 }
 
-blockquote {
-  max-width: 700px;
-  white-space: pre-line;
-  font-size: 1.1rem;
-  text-align: center;
-  line-height: 1.8;
-  color: #ccc;
-  margin: 0 20px;
-  padding-bottom: 40px;
+#counter {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #aaa;
 }
 
-blockquote .destacado {
-  color: #ff4b5c;
-  font-style: italic;
-  font-weight: bold;
-}
-
-/* 🟢 RESPONSIVE: para pantallas menores a 600px */
-@media (max-width: 600px) {
-  body {
-    padding-top: 30px;
-  }
-
-  .timer {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .timer div {
-    padding: 15px 20px;
-    font-size: 1rem;
-  }
-
-  .timer span {
-    font-size: 1.5rem;
-  }
-
-  blockquote {
-    font-size: 1rem;
-    padding: 0 10px;
-    line-height: 1.6;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
+iframe {
+  border: none;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
